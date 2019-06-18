@@ -1,50 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>GitStar</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="./jquery-3.2.1.js"></script>
-  </head>
-  <body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <style>
-      * {
-        background: white;
-      }
-      .head {
-        display: flex;
-        justify-content: center;
-      }
-      .param {
-        position: absolute;
-        width: 98%;
-        height: 80%;
-        display: flex;
-        justify-content: center; /*centers items on the line (the x-axis by default)*/
-        align-items: center; /*centers items on the cross-axis (y by default)*/
-      }
-    </style>
 
-    <div class="flex-container head">
-      <h1>GitStar</h1>
-    </div>
+<head>
+  <title>GitStar</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="./jquery-3.2.1.js"></script>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body
+
+bgcolor="-webkit-linear-gradient(to right, #f5af19, #f12711)" ;
+
+
+>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <div class="loginbox">
+    <img class="avatar">
+    <h1>GitStar</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <form id="todoInputForm">
-    <div class="flex-container param">
-      <input type="text"  placeholder="Enter your Github Username" class="input-username" id="login" />
-      <br />
-      <button id="searchbtn">Search</button>
-    </div>
+      <div class="avatar"></div>
+      <p>Username</p>
+      <input type="text" placeholder="Enter your Github Username" class="input-username" id="login" />
+      <input type="submit" id="searchbtn name="" value="Search">
+      <a href="https://help.github.com/en/articles/changing-your-github-username">Forgot your Username</a><br>
+      <a href="https://github.com/join">Don't have an account?</a>
     </form>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-       $(document).ready(function(){
-    	$('#todoInputForm').submit(function(e){
-    		e.preventDefault()
-    		var input = $('#login').val()
-    		window.location.href = '/' + input
-    	})
+  </div>
+
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+  <script>
+    $(document).ready(function () {
+      $('#todoInputForm').submit(function (e) {
+        e.preventDefault()
+        var input = $('#login').val()
+        window.location.href = '/' + input
+      })
     })
-    </script>
-  </body>
+  </script>
+</body>
+
 </html>

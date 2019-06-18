@@ -7,68 +7,65 @@ route.get("/", (req, res) => {
 
 function parseData(response, user) {
   var checkLang = {};
-  const metadata = response.reduce(function(acc, currentItem) {
+  const metadata = response.reduce(
+    function(acc, currentItem) {
       acc.stargazers_count += currentItem.stargazers_count;
       if (checkLang[currentItem.language]) {
-          checkLang[currentItem.language] = checkLang[currentItem.language] + 1;
+        checkLang[currentItem.language] = checkLang[currentItem.language] + 1;
       } else {
-          checkLang[currentItem.language] = 1;
+        checkLang[currentItem.language] = 1;
       }
       return acc;
-  }, { stargazers_count: 0 });
+    },
+    { stargazers_count: 0 }
+  );
 
   metadata["languages"] = Object.keys(checkLang).map(item => {
-      return {
-          value: (checkLang[item] / response.length) * 100,
-          title: item
-      };
+    return {
+      value: (checkLang[item] / response.length) * 100,
+      title: item
+    };
   });
 
   metadata["mainlanguage"] = Object.keys(checkLang).reduce(function(a, b) {
-      return checkLang[a] > checkLang[b] ? a : b;
+    return checkLang[a] > checkLang[b] ? a : b;
   });
-
-
 
   if (metadata.stargazers_count > 1000) {
     metadata["artist"] = {
       id: "#",
       character: "#",
-      desc:
-        "#"
+      desc: "#"
     };
   } else if (metadata.stargazers_count > 250 && user.followers > 25) {
     metadata["artist"] = {
       id: "#",
       character: "#",
-      desc:
-        "#"
+      desc: "#"
     };
   } else if (metadata.languages.length > 4) {
     metadata["artist"] = {
       id: "#",
       character: "#",
 
-      desc:
-        '#'
+      desc: "#"
     };
   } else if (metadata.languages.length <= 3 && metadata.stargazers_count > 50) {
     metadata["artist"] = {
       id: "#",
       character: "#",
-      desc:
-        "#"
+      desc: "#"
     };
   } else {
     metadata["artist"] = {
       id: "#",
       character: "#",
-      desc:
-        "#"
+      desc: "#"
     };
   }
   metadata.avatar = response[0].owner.avatar_url;
-  metadata.increment = metadata.stargazers_count / 10 > 0 ? metadata.stargazers_count / 10 : 1;
+  metadata.increment =
+    metadata.stargazers_count / 10 > 0 ? metadata.stargazers_count / 10 : 1;
   metadata.follow = user.followers / 10 > 0 ? user.followers / 10 : 1;
   metadata.repos = user.public_repos / 10 > 0 ? user.public_repos / 10 : 1;
   return metadata;
@@ -89,12 +86,12 @@ route.get("/:id", function(req, res) {
             metadata: getMetadata
           });
         })
-        .catch((e) => {
+        .catch(e => {
           console.log(e);
           res.render("404");
         });
     })
-    .catch((e) => {
+    .catch(e => {
       console.log(e);
       res.render("404");
     });
