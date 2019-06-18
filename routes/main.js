@@ -1,14 +1,16 @@
 const route = require("express").Router();
 const axios = require("axios");
 
+//to render index.js from views folder
 route.get("/", (req, res) => {
   res.render("index");
 });
 
+//function to  get github account info in the form of metadata
 function parseData(response, user) {
-  var checkLang = {};
+  var checkLang = {};  //language array
   const metadata = response.reduce(
-    function(acc, currentItem) {
+    function(acc, currentItem) {    //total stars on github profile
       acc.stargazers_count += currentItem.stargazers_count;
       if (checkLang[currentItem.language]) {
         checkLang[currentItem.language] = checkLang[currentItem.language] + 1;
@@ -39,9 +41,9 @@ function parseData(response, user) {
     };
   } else if (metadata.stargazers_count > 250 && user.followers > 25) {
     metadata["artist"] = {
-      id: "#",
-      character: "#",
-      desc: "#"
+      id: "tripathi",  //used img of same id
+      character: "Kaleen Bhaiya",
+      desc: "People follow you in masses and look up to you as a Icon, You are The Bahubali Kaleen Bhaiya of the tech world. "
     };
   } else if (metadata.languages.length > 4) {
     metadata["artist"] = {

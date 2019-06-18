@@ -1,0 +1,17 @@
+body {
+
+    padding: 20px;
+    overflow: scroll;
+  }
+
+header {
+    margin: .10vw;
+    display: flexbox;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex-flow: row;
+
+}
+
+
+
