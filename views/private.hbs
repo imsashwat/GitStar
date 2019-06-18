@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>GitStar</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="./jquery-3.2.1.js"></script>
+  </head>
+  <div class="header">
+    <a href="/"><img src="#" alt="" height="30"/></a>
+  </div>
+  <div>
+    <div>
+      <div>
+        <div>
+          <img src="{{ metadata.avatar }}" height="200" />
+          <div>{{ user.name }}</div>
+        </div>
+        <div>is</div>
+        <div>
+          <img src="{{  metadata.artist.id  }}.jpg " height="200" />
+          <div class="artist-name">{{ metadata.artist.character }}</div>
+        </div>
+      </div>
+      <div>{{ metadata.artist.desc }}</div>
+      <div>
+        <div>
+          <div>
+            <div>TOTAL STARS</div>
+
+            <div
+              class="meta-value numscroller"
+              data-max="{{ metadata.stargazers_count }}"
+              data-min="0"
+              data-delay="1"
+              data-increment="{{ metadata.increment}}"
+            >
+              {{ metadata.stargazers_count }}
+            </div>
+          </div>
+        </div>
+        <div class="meta-info inline-block">
+          <div class="meta-item">
+            <div class="meta-title">TOTAL FOLLOWERS</div>
+
+            <div
+              class="meta-value numscroller"
+              data-max="{{ user.followers }}"
+              data-min="0"
+              data-delay="1"
+              data-increment="{{ metadata.follow }}"
+            >
+              {{ user.followers }}
+            </div>
+          </div>
+        </div>
+        <div class="meta-info inline-block">
+          <div class="meta-item">
+            <div class="meta-title">TOTAL REPOS (PUBLIC)</div>
+
+            <div
+              data-max="{{ user.public_repos }}"
+
+              data-increment="{{ metadata.repos  }}"
+            >
+              {{ user.public_repos }}
+            </div>
+          </div>
+        </div>
+        <div>
+          <div>
+            <div>FAVORITE LANGUAGE</div>
+
+            <div>{{ metadata.mainlanguage }}</div>
+          </div>
+        </div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+
+  </script>
+</html>
