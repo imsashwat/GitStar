@@ -7,59 +7,86 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script src="./jquery-3.2.1.js"></script>
   <link rel="stylesheet" href="../2style.css">
+  <link
+      href="https://fonts.googleapis.com/css?family=Anton&display=swap"
+      rel="stylesheet"
+    />
 </head>
 
-<body bgcolor=#ffffff>
-  <div>
-    <a href="/"><img src="#" /></a>
 
-    <div class="header">
+<body bgcolor="white">
+
+  <div style="display: flex; justify-content: space-around;">
+    <img class="git" height="70" width="100" />
+  </div>
+  <br />
+  <br />
+
+
+  <div class="flex-container">
+    <div class="card">
+      <img src="{{ metadata.avatar }}" height="200" class="center" />
+      <p style="text-align: center"><b><span>{{ user.name }}</span></b></p>
+    </div>
+    <div style="text-align: center" id="aka">
+      <h2>a.k.a</h2>
+    </div>
+    <div class="card">
+      <img src="{{  metadata.artist.id  }}.jpg " height="200" class="center" />
+      <p style="text-align: center"><b><span>{{ metadata.artist.character }}</span></b></p>
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+  <div style="text-align: center; font-family: 'Anton', sans-serif">
+    <h2>{{ metadata.artist.desc }}</h2>
+  </div>
+
+  <br>
+  <br>
+
+
+  <div class="flex-container">
+    <div>
       <div>
-        <img src="{{ metadata.avatar }}" height="200" />
-        <div>{{ user.name }}</div>
+        <h3>TOTAL STARS</h3>
       </div>
-      <div>is</div>
-      <div>
-        <img src="{{  metadata.artist.id  }}.jpg " height="200" />
-        <div class="artist-name">{{ metadata.artist.character }}</div>
-      </div>
-
-      <div>{{ metadata.artist.desc }}</div>
-
-
-
-      <div>TOTAL STARS</div>
-
       <div class="meta-value numscroller" data-max="{{ metadata.stargazers_count }}" data-min="0" data-delay="1"
         data-increment="{{ metadata.increment}}">
         {{ metadata.stargazers_count }}
       </div>
+    </div>
 
 
-      <div class="meta-info inline-block">
-
-        <div class="meta-title">TOTAL FOLLOWERS</div>
-
-        <div class="meta-value numscroller" data-max="{{ user.followers }}" data-min="0" data-delay="1"
-          data-increment="{{ metadata.follow }}">
-          {{ user.followers }}
-        </div>
-
-      </div>
-      <div class="meta-info inline-block">
-
-        <div class="meta-title">TOTAL REPOS (PUBLIC)</div>
-
-        <div data-max="{{ user.public_repos }}" data-increment="{{ metadata.repos  }}">
-          {{ user.public_repos }}
-
-        </div>
-      </div>
+    <div>
       <div>
-        <div>FAVORITE LANGUAGE</div>
-        <div>{{ metadata.mainlanguage }}</div>
+        <h3>TOTAL FOLLOWERS</h3>
+      </div>
+      <div data-max="{{ user.followers }}" data-min="0" data-delay="1"
+        data-increment="{{ metadata.follow }}">
+        {{ user.followers }}
       </div>
     </div>
-</body>
 
+    <div>
+
+      <div>
+        <h3>TOTAL REPOS (PUBLIC)</h3>
+      </div>
+
+      <div data-max="{{ user.public_repos }}" data-increment="{{ metadata.repos  }}">
+        {{ user.public_repos }}
+
+      </div>
+    </div>
+    <div>
+      <div>
+        <h3>FAVORITE LANGUAGE</h3>
+      </div>
+      <div>{{ metadata.mainlanguage }}</div>
+    </div>
+  </div>
+</body>
 </html>

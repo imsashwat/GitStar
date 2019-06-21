@@ -47,10 +47,9 @@ function parseData(response, user) {
     };
   } else if (metadata.languages.length > 4) {
     metadata["artist"] = {
-      id: "#",
-      character: "#",
-
-      desc: "#"
+      id: "newton",
+      character: "Newton",
+      desc: "A man who knows multiple languages, you can be a jack of all trades. You are man to watch out for."
     };
   } else if (metadata.languages.length <= 3 && metadata.stargazers_count > 50) {
     metadata["artist"] = {
