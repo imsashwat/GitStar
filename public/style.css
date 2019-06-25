@@ -86,9 +86,11 @@ h1{
     color: #ffc107;
 }
 
-
-
-
+.footer {
+    text-align: center;
+    color: #fff;
+    margin: 20px 0;
+  }
 
 
 

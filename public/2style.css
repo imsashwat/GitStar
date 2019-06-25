@@ -1,5 +1,5 @@
 body {
-    background-color: white;
+    background-color: whitesmoke;
 }
 
 .git {
@@ -10,7 +10,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color: #ffffff;
+    background-color: #2bcbba;
 }
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -33,7 +33,7 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        background-color: whitesmoke;
+        background-color: #2bcbba;
     }
 
     .card {

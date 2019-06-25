@@ -35,9 +35,9 @@ function parseData(response, user) {
 
   if (metadata.stargazers_count > 1000) {
     metadata["artist"] = {
-      id: "#",
-      character: "#",
-      desc: "#"
+      id: "gaitonde",
+      character: "Gaitonde",
+      desc: "You are the King! You are respected by everyone, good at what you do. You take up any given job with dedication and are praised for it. King in the north!"
     };
   } else if (metadata.stargazers_count > 250 && user.followers > 25) {
     metadata["artist"] = {
@@ -53,15 +53,15 @@ function parseData(response, user) {
     };
   } else if (metadata.languages.length <= 3 && metadata.stargazers_count > 50) {
     metadata["artist"] = {
-      id: "#",
-      character: "#",
-      desc: "#"
+      id: "Guddu",
+      character: "Guddu Pandit",
+      desc: 'You seem to be the master of the domain you like, and would want to pursue it further'
     };
   } else {
     metadata["artist"] = {
-      id: "#",
-      character: "#",
-      desc: "#"
+      id: "Bablu",
+      character: "Bablu Pandit",
+      desc: "'You are a mysterious person. You don\'t like to share much, and are very reserved. Go out and shine!'"
     };
   }
   metadata.avatar = response[0].owner.avatar_url;
