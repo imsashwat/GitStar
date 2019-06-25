@@ -53,13 +53,13 @@ function parseData(response, user) {
     };
   } else if (metadata.languages.length <= 3 && metadata.stargazers_count > 50) {
     metadata["artist"] = {
-      id: "Guddu",
+      id: "guddu",
       character: "Guddu Pandit",
       desc: 'You seem to be the master of the domain you like, and would want to pursue it further'
     };
   } else {
     metadata["artist"] = {
-      id: "Bablu",
+      id: "bablu",
       character: "Bablu Pandit",
       desc: "'You are a mysterious person. You don\'t like to share much, and are very reserved. Go out and shine!'"
     };
