@@ -15,4 +15,4 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', require('./routes/main'))  //middleware function
 
-app.listen(8000)
+app.listen(process.env.PORT || 8000)
