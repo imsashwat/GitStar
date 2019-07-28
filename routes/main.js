@@ -39,25 +39,29 @@ function parseData(response, user) {
       character: "Gaitonde",
       desc: "You are the King! You are respected by everyone, good at what you do. You take up any given job with dedication and are praised for it. King in the north!"
     };
-  } else if (metadata.stargazers_count > 250 && user.followers > 25) {
+  }
+  else if (metadata.stargazers_count > 250 && user.followers > 25) {
     metadata["artist"] = {
       id: "tripathi",  //used img of same id
       character: "Kaleen Bhaiya",
       desc: "People follow you in masses and look up to you as a Icon, You are The Bahubali Kaleen Bhaiya of the tech world. "
     };
-  } else if (metadata.languages.length > 4) {
+  }
+   else if (metadata.languages.length > 4) {
     metadata["artist"] = {
       id: "newton",
       character: "Newton",
       desc: "A man who knows multiple languages, you can be a jack of all trades. You are man to watch out for."
     };
-  } else if (metadata.languages.length <= 3 && metadata.stargazers_count > 50) {
+  }
+  else if (metadata.languages.length <= 3 && metadata.stargazers_count > 50) {
     metadata["artist"] = {
       id: "guddu",
       character: "Guddu Pandit",
       desc: 'You seem to be the master of the domain you like, and would want to pursue it further'
     };
-  } else {
+  }
+  else {
     metadata["artist"] = {
       id: "bablu",
       character: "Bablu Pandit",
@@ -65,8 +69,7 @@ function parseData(response, user) {
     };
   }
   metadata.avatar = response[0].owner.avatar_url;
-  metadata.increment =
-    metadata.stargazers_count / 10 > 0 ? metadata.stargazers_count / 10 : 1;
+  metadata.increment = metadata.stargazers_count / 10 > 0 ? metadata.stargazers_count / 10 : 1;
   metadata.follow = user.followers / 10 > 0 ? user.followers / 10 : 1;
   metadata.repos = user.public_repos / 10 > 0 ? user.public_repos / 10 : 1;
   return metadata;
